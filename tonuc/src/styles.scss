@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+// video {
+//     width: 321px;
+//     position: relative;
+//     top: 16px;
+//   }
+webcam video { 
+    --b: 4px;   /* thickness of the border */
+    --c: rgb(213, 28, 28);   /* color of the border */
+    --w: 20px;  /* width of border */
+   
+    border: var(--b) solid transparent; /* space for the border */
+   
+    --g: #7770 90deg, var(--c) 0;
+   
+    background:
+      conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--g)) 0    0,
+      conic-gradient(from 180deg at top    var(--b) right var(--b), var(--g)) 100% 0,
+      conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--g)) 0    100%,
+      conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100% 100%;
+    background-size: var(--w) var(--w);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+   
+    /* Irrelevant code */
+    width: 365px;
+    height: 484px;
+    box-sizing: border-box;
+    margin: 5px;
+    display: inline-flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+}

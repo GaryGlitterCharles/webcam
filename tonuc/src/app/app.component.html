@@ -1,0 +1,42 @@
+ <div>
+  <div >
+    <div class="box" *ngIf="webcamImage">
+      <img style="width: 322px" [src]="webcamImage.imageAsDataUrl" />
+    </div>
+    <webcam style="display: flex;
+    justify-content: center;margin-top: 28%;"  *ngIf="!webcamImage" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+    (initError)="handleInitError($event)">
+    </webcam>
+  </div> 
+  
+  
+  
+  <!-- <div class="wrapper" (window:resize)="onResize($event)">
+    <div>
+      <div class="snapshot" *ngIf="webcamImage">
+        <img style="width: 322px" [src]="webcamImage.imageAsDataUrl" />
+      </div>
+      <webcam  *ngIf="!webcamImage" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+        (initError)="handleInitError($event)">
+      </webcam> 
+    </div>
+  </div> -->
+  <div *ngIf="!webcamImage" style="margin: 0px;background: #4e4f50" class="actionBtn column" title="Take Picture">
+    <img src="" alt="phoneCamera" (click)="triggerSnapshot()" class="photoCapButton">
+  </div>
+  
+  <div *ngIf="webcamImage" class="row" style="margin: 0px; background: #4e4f50;"> 
+    <div class="col-6" style="margin-bottom: 5px;">
+      <button style="width: 100%;margin-top: 8px;background-color: #ffff; color: #f7931d; box-shadow: none;" type="button"
+        class="btn ripple" (click)="retakephoto()">
+        Retake Photo
+      </button>
+    </div>
+    <div class="col-6" style="margin-bottom: 5px;">
+      <button style="width: 100%;margin-top: 8px;background-color: #f7931d; color: #ffff; box-shadow: none;" type="button"
+        class="btn ripple">
+        Next
+      </button>
+    </div>
+  </div>
+ </div>

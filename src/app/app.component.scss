@@ -1,0 +1,112 @@
+.box {
+  --b: 4px;
+  /* thickness of the border */
+  --c: rgb(213, 28, 28);
+  /* color of the border */
+  --w: 20px;
+  /* width of border */
+
+  border: var(--b) solid transparent;
+  /* space for the border */
+
+  --g: #7770 90deg, var(--c) 0;
+
+  background:
+    conic-gradient(from 90deg at top var(--b) left var(--b), var(--g)) 0 0,
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--g)) 100% 0,
+    conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--g)) 0 100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100% 100%;
+  background-size: var(--w) var(--w);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+
+  /* Irrelevant code */
+  width: 335px;
+  height: 440px;
+  box-sizing: border-box;
+  margin: 5px;
+  display: inline-flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  display: block;
+  margin: auto;
+  margin-top: 28%;
+}
+
+.wrapper {
+  display: flex;
+  // background: #777065d1;
+  // height: 92vh;
+  align-items: center;
+  justify-content: center;
+  // inexplicable/unknown extra space is rendered, causing scrollbars to show up
+  overflow: hidden;
+}
+
+.transButton {
+  color: #ff8a00;
+  border-color: #ff8a00;
+  box-shadow: none;
+  background: #ffff;
+}
+
+.photoCapButton {
+  width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay {
+  --border-style: 3px solid red;
+  --border-space: 20px;
+
+  position: absolute;
+  width: 720px;
+  /* same size as the image */
+  height: 480px;
+}
+
+.overlay-helper {
+  position: relative;
+  width: 100%;
+  /* make this element same size as the wrapper */
+  height: 100%;
+}
+
+.overlay-element {
+  position: absolute;
+  width: 150px;
+  /* controls the length of the borders */
+  height: 100px;
+  /* controls the height of the borders */
+}
+
+.overlay .top-left {
+  border-left: var(--border-style);
+  border-top: var(--border-style);
+  top: var(--border-space);
+  left: var(--border-space);
+}
+
+.overlay .top-right {
+  border-right: var(--border-style);
+  border-top: var(--border-style);
+  top: var(--border-space);
+  right: var(--border-space);
+}
+
+.overlay .bottom-left {
+  border-left: var(--border-style);
+  border-bottom: var(--border-style);
+  bottom: var(--border-space);
+}
+
+.overlay .bottom-right {
+  border-right: var(--border-style);
+  border-bottom: var(--border-style);
+  bottom: var(--border-space);
+  right: var(--border-space);
+}
