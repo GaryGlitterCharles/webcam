@@ -4,9 +4,9 @@
 //     position: relative;
 //     top: 16px;
 //   }
-webcam video { 
+video { 
     --b: 4px;   /* thickness of the border */
-    --c: rgb(213, 28, 28);   /* color of the border */
+    --c: rgb(255, 255, 255);   /* color of the border */
     --w: 20px;  /* width of border */
    
     border: var(--b) solid transparent; /* space for the border */

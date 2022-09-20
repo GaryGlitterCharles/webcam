@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
@@ -8,7 +8,7 @@ declare const gtag: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'webcam';
   private width: number = 0;
   private height: number = 0;
@@ -16,12 +16,16 @@ export class AppComponent implements OnInit {
   public trigger: Subject<void> = new Subject<void>();
   public webcamImage: WebcamImage | undefined;
   public errors: WebcamInitError[] = [];
-  constructor(public router: Router) {
+  constructor(public router: Router, private elementRef: ElementRef) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         gtag('config', 'G-N0KGWY6Y4V', { 'page_path': event.urlAfterRedirects });
       }      
     })
+  }
+  // linear-gradient(to left, rgb(253, 200, 47), rgb(255, 161, 0) 100%)
+  ngAfterViewInit(): void {
+    this.elementRef.nativeElement.ownerDocument.body.style.background = 'rgb(163, 168, 168)';
   }
   ngOnInit(): void {
     const permissionName = "camera" as PermissionName;

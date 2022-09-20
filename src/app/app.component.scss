@@ -1,7 +1,7 @@
 .box {
   --b: 4px;
   /* thickness of the border */
-  --c: rgb(213, 28, 28);
+  --c: rgb(255, 255, 255);
   /* color of the border */
   --w: 20px;
   /* width of border */
@@ -21,10 +21,10 @@
   background-repeat: no-repeat;
 
   /* Irrelevant code */
-  width: 335px;
+  width: 331px;
   height: 440px;
   box-sizing: border-box;
-  margin: 5px;
+  //margin: 5px;
   display: inline-flex;
   font-size: 30px;
   justify-content: center;
@@ -53,7 +53,7 @@
 }
 
 .photoCapButton {
-  width: 50px;
+  width: 70px;
   display: block;
   margin-left: auto;
   margin-right: auto;
