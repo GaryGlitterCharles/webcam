@@ -19,7 +19,7 @@ export class NewcamComponent implements OnInit, AfterViewInit {
   // };
   public errors: WebcamInitError[] = [];
   constructor(private elementRef: ElementRef) {
-    screen.orientation.lock('portrait-primary');
+    // screen.orientation.lock('portrait-primary');
     this.sOrentation = window.matchMedia("(orientation: portrait)");
     console.log(this.sOrentation);
 
