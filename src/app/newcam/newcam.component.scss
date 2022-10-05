@@ -1,0 +1,129 @@
+.photoCapButton {
+  width: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  text-align: center;
+  margin-top: 100px;
+  --b: 4px;
+  /* thickness of the border */
+  --c: rgb(255, 255, 255);
+  /* color of the border */
+  --w: 20px;
+  /* width of border */
+
+  border: var(--b) solid transparent;
+  /* space for the border */
+
+  --g: #7770 90deg, var(--c) 0;
+
+  background:
+    conic-gradient(from 90deg at top var(--b) left var(--b), var(--g)) 0 0,
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--g)) 100% 0,
+    conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--g)) 0 100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100% 100%;
+  background-size: var(--w) var(--w);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+
+  /* Irrelevant code */
+  width: 286px;
+  height: 376px;
+  box-sizing: border-box;
+  //margin: 5px;
+  //display: inline-flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  display: block;
+  margin: auto;
+  margin-top: 28%;
+}
+
+.previewImg {
+  width: 275px;
+}
+
+.captureButton {
+  background: #4e4f50;
+  height: 68px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.retakeScreen {
+  margin: 0px;
+  background: #4e4f50;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.retakeScreenCol {
+  margin-bottom: 5px;
+}
+
+.retakeTakeButton {
+  width: 100%;
+  margin-top: 8px;
+  background-color: #ffff;
+  color: #f7931d;
+  box-shadow: none;
+}
+
+.nextButton {
+  width: 100%;
+  margin-top: 8px;
+  background-color: #f7931d;
+  color: #ffff;
+  box-shadow: none;
+}
+
+@media (orientation: landscape) {
+  .box {
+    text-align: center;
+    --b: 4px;
+    /* thickness of the border */
+    --c: rgb(255, 255, 255);
+    /* color of the border */
+    --w: 20px;
+    /* width of border */
+
+    border: var(--b) solid transparent;
+    /* space for the border */
+
+    --g: #7770 90deg, var(--c) 0;
+
+    background:
+      conic-gradient(from 90deg at top var(--b) left var(--b), var(--g)) 0 0,
+      conic-gradient(from 180deg at top var(--b) right var(--b), var(--g)) 100% 0,
+      conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--g)) 0 100%,
+      conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100% 100%;
+    background-size: var(--w) var(--w);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+
+    /* Irrelevant code */
+    width: 284px;
+    height: 214px;
+    box-sizing: border-box;
+    //margin: 5px;
+    //display: inline-flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+    display: block;
+    margin: auto;
+    margin-top: 52px;
+  }
+
+}
