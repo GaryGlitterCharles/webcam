@@ -1,40 +1,40 @@
-<div style="background-color: #4d4e50;
-position:fixed;
-top:0;
-width:100%;
-z-index:100;
-height: 40px;">
-    <img src="assets/leftarrow.png" style="width: 13px;
-position: absolute;
-left: 15px;
-top: 10px;" alt="" srcset="">
+<div class="toolBar">
+    <img src="assets/leftarrow.png" class="toolBarArrow" alt="" srcset="">
+    <div class="desc">
+        Make sure your e-KTP details are clearly <br> visible and does not cross the guidelines
+    </div>
 </div>
+
 
 
 <div class="box">
-    <div  *ngIf="webcamImage">
+    <div *ngIf="webcamImage">
         <img class="previewImg" [src]="webcamImage.imageAsDataUrl" />
     </div>
     <webcam [width]="webcamWidth" [height]="webcamHeight" *ngIf="!webcamImage" [trigger]="triggerObservable"
-        (imageCapture)="handleImage($event)" (initError)="handleInitError($event)"></webcam>
+        [videoOptions]="videoOptions" (imageCapture)="handleImage($event)" (initError)="handleInitError($event)"
+        [switchCamera]="nextWebcamObservable"></webcam>
 </div>
 
 
-<div *ngIf="!webcamImage"
-    class="captureButton actionBtn column" title="Take Picture">
-    <img src="assets/camera.png" alt="phoneCamera" (click)="triggerSnapshot()" class="photoCapButton">
+<div *ngIf="!webcamImage" class="captureButton actionBtn row" title="Take Picture">
+    <div class="col-6">
+        <img src="assets/cameraRotate.png" alt="rorate" (click)="rotateCamera(true)" class="photoCapButton">
+    </div>
+    <div class="col-6">
+        <img src="assets/cameraClick.png" alt="phoneCamera" (click)="triggerSnapshot()" class="photoCapButton">
+    </div>
+
 </div>
 
 <div *ngIf="webcamImage" class="retakeScreen row">
     <div class="retakeScreenCol col-6">
-        <button
-            type="button" class="retakeTakeButton btn ripple" (click)="retakephoto()">
+        <button type="button" class="retakeTakeButton btn ripple" (click)="retakephoto()">
             Retake Photo
         </button>
     </div>
     <div class="retakeScreenCol col-6">
-        <button
-            type="button" class="nextButton btn ripple">
+        <button type="button" class="nextButton btn ripple" (click)="toOldCom()">
             Next
         </button>
     </div>

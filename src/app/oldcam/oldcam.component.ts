@@ -59,18 +59,14 @@ export class OldcamComponent implements OnInit {
   retakephoto() {
     this.webcamImage = undefined;
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event?: Event) {
-    const win = !!event ? (event.target as Window) : window;
-    this.width = win.innerWidth;
-    this.height = win.innerHeight;
+
+  public get videoOptions(): MediaTrackConstraints {
+    //you can set ideal,min,max for width and height
+    const result: MediaTrackConstraints = {
+      width: { max: 120, ideal: 1920 },
+      height: { max: 200, ideal: 1080 }
+    };
+    return result;
   }
-  public targetStyle(): any {
-    let x = 100 + Math.random() * 100;
-    let y = 100 + Math.random() * 100;
-    return {
-      'top': `${x}px`,
-      'left': `${y}px`,
-    }
-  }
+
 }

@@ -4,7 +4,7 @@ import { NewcamComponent } from './newcam/newcam.component';
 import { OldcamComponent } from './oldcam/oldcam.component';
 
 const routes: Routes = [
-  {path:'old', component: OldcamComponent},
+  {path:'gary', component: OldcamComponent},
   {path:'', component: NewcamComponent}
 ];
 

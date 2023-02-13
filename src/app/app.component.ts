@@ -1,4 +1,6 @@
-import {  Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { AnalyticsServiceService } from './analytics-service.service';
 
 declare const gtag: Function;
 @Component({
@@ -7,5 +9,7 @@ declare const gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- 
+  constructor(public router: Router, private analyticsServiceService: AnalyticsServiceService) {
+    this.analyticsServiceService.init();
+  }
 }
