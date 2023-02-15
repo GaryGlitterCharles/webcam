@@ -7,7 +7,7 @@
 
 
 
-<div class="box">
+<div style="margin-top: 50%; text-align: center;">
     <div *ngIf="webcamImage">
         <img class="previewImg" [src]="webcamImage.imageAsDataUrl" />
     </div>
@@ -17,11 +17,11 @@
 </div>
 
 
-<div *ngIf="!webcamImage" class="captureButton actionBtn row" title="Take Picture">
-    <div class="col-6">
+<div *ngIf="!webcamImage" class="captureButton actionBtn" title="Take Picture">
+    <!-- <div class="col-6">
         <img src="assets/cameraRotate.png" alt="rorate" (click)="rotateCamera(true)" class="photoCapButton">
-    </div>
-    <div class="col-6">
+    </div> -->
+    <div class="">
         <img src="assets/cameraClick.png" alt="phoneCamera" (click)="triggerSnapshot()" class="photoCapButton">
     </div>
 

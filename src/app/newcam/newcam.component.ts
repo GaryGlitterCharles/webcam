@@ -17,7 +17,7 @@ export class NewcamComponent implements OnInit, AfterViewInit {
   webcamWidth: any;
   webcamHeight: any;
   sOrentation: any;
-  videoOrenW: any;
+  // videoOrenW: any;
 
   public facingMode: string = 'environment';
 
@@ -35,17 +35,17 @@ export class NewcamComponent implements OnInit, AfterViewInit {
   public webcamImage: WebcamImage | undefined;
   ngOnInit(): void {
 
-    if (this.sOrentation.matches) {
+   // if (this.sOrentation.matches) {
       // If the Orentation is portrait
-      this.webcamHeight = 400;
-      this.webcamWidth = 400;
-      this.videoOrenW = 120;
-    } else {
-      // If the Orentation is Landscape
-      this.webcamHeight = 200;
-      this.webcamWidth = 300;
-      this.videoOrenW = 270;
-    }
+      this.webcamHeight = 350;
+      this.webcamWidth = 350;
+      // this.videoOrenW = 120;
+    // } else {
+    //   // If the Orentation is Landscape
+    //   this.webcamHeight = 200;
+    //   this.webcamWidth = 300;
+    //   // this.videoOrenW = 270;
+    // }
 
     WebcamUtil.getAvailableVideoInputs()
       .then((mediaDevices: MediaDeviceInfo[]) => {
@@ -75,20 +75,20 @@ export class NewcamComponent implements OnInit, AfterViewInit {
     this.errors.push(error);
   }
 
-  @HostListener('window:orientationchange', ['$event'])
-  onOrientationChange($event: any) {
-    // If there are matches, we're in portrait
-    if (!this.sOrentation.matches) {
-      this.webcamHeight = 400;
-      this.webcamWidth = 400;
-      this.videoOrenW = 120;
-    } else {
-      // Landscape orientation
-      this.webcamHeight = 200;
-      this.webcamWidth = 300;
-      this.videoOrenW = 270;
-    }
-  }
+  // @HostListener('window:orientationchange', ['$event'])
+  // onOrientationChange($event: any) {
+  //   // If there are matches, we're in portrait
+  //   if (!this.sOrentation.matches) {
+  //     this.webcamHeight = 400;
+  //     this.webcamWidth = 400;
+  //     this.videoOrenW = 120;
+  //   } else {
+  //     // Landscape orientation
+  //     this.webcamHeight = 200;
+  //     this.webcamWidth = 300;
+  //     this.videoOrenW = 270;
+  //   }
+  // }
 
   toOldCom() {
     this.router.navigate(['gary']);
@@ -97,8 +97,8 @@ export class NewcamComponent implements OnInit, AfterViewInit {
   public get videoOptions(): MediaTrackConstraints {
     //you can set ideal,min,max for width and height
     const result: MediaTrackConstraints = {
-      width: { max: this.videoOrenW, ideal: 1920 },
-      height: { max: 200, ideal: 1080 }
+      width: { max: 640, ideal: 1920 },
+      height: { min: 480, ideal: 1080 }
     };
     // to show back camera by default
     if (this.facingMode && this.facingMode !== '') {
