@@ -1,11 +1,11 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+node {  
+    stage('checkout scm') { 
+        echo "checkout" 
+    }
+    stage('install') { 
+        echo "install"  
+    }
+    stage('linting') { 
+        echo "linting"  
     }
 }
