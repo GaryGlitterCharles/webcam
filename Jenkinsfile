@@ -11,5 +11,4 @@ node {
 }
 def phile(test) {
   echo "${test}"
-  
 }
