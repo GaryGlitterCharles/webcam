@@ -6,9 +6,10 @@ node {
         echo "${HOST}"
         echo "${BASEDIR}"
         echo "${NPM_COMAND}"
-      phile('sankar')
+      phile('diwal')
     }
 }
 def phile(test) {
   echo "${test}"
+  
 }
