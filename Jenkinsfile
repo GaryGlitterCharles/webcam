@@ -1,5 +1,6 @@
 node {  
     stage('Build') { 
-        echo "Help"
+        def HOST = 'MYSCIS'
+        echo "${HOST}"
     }
 }
