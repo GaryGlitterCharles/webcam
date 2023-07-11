@@ -1,11 +1,11 @@
 node {  
-    stage('checkout scm') { 
-        echo "checkout" 
-    }
-    stage('install') { 
-        echo "install"  
-    }
-    stage('linting') { 
-        echo "linting"  
+    stage('Build') { 
+        def HOST = ''
+        def BASEDIR = ''
+        def NPM_COMAND = ''
+
+        echo ${HOST}
+        echo ${BASEDIR}
+        echo ${NPM_COMAND}
     }
 }
