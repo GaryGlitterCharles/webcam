@@ -6,5 +6,9 @@ node {
         echo "${HOST}"
         echo "${BASEDIR}"
         echo "${NPM_COMAND}"
+      phile('sankar')
     }
+}
+def phile(test) {
+  echo "${test}"
 }
